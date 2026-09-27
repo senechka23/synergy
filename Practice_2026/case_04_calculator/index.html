@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="calculator">
+        <h1>Калькулятор</h1>
+        <div class="inputs">
+            <input id="leftField" type="text" placeholder="Первое число">
+            <input id="rightField" type="text" placeholder="Второе число">
+        </div>
+        <div class="buttons">
+            <button type="button" data-operation="sum">Сумма</button>
+            <button type="button" data-operation="difference">Разность</button>
+            <button type="button" data-operation="product">Произведение</button>
+            <button type="button" data-operation="division">Деление</button>
+        </div>
+        <div id="output" class="output">Результат: —</div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
