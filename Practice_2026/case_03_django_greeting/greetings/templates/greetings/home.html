@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие</title>
+    <link rel="stylesheet" href="{% static 'greetings/style.css' %}">
+</head>
+<body>
+    <main class="card">
+        <h1>Приветствие пользователя</h1>
+        <p class="description">Введите имя, чтобы получить персональное приветствие.</p>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <label for="{{ visitor_form.display_name.id_for_label }}">{{ visitor_form.display_name.label }}</label>
+            {{ visitor_form.display_name }}
+            {% if visitor_form.display_name.errors %}
+                <div class="error">{{ visitor_form.display_name.errors.0 }}</div>
+            {% endif %}
+            <button type="submit">Submit</button>
+        </form>
+        {% if visitor_label %}
+            <div class="greeting">Здравствуйте, {{ visitor_label }}!</div>
+        {% endif %}
+    </main>
+</body>
+</html>
